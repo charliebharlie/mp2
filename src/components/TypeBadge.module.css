@@ -1,0 +1,12 @@
+/* Colors come from --type-color / --type-text set on [data-type] in index.css */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--type-text);
+  background: var(--type-color);
+}

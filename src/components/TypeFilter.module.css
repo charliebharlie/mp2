@@ -1,0 +1,50 @@
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px 0 10px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--type-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: color-mix(in srgb, var(--type-color) 12%, var(--surface));
+}
+
+.chip[aria-pressed='true'] {
+  color: var(--type-text);
+  background: var(--type-color);
+}
+
+/* Fixed-width slot: colored dot when off, check mark when on (not color-only). */
+.check {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 50%;
+  background: var(--type-color);
+}
+
+.chip[aria-pressed='true'] .check {
+  background: transparent;
+}

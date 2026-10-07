@@ -1,0 +1,153 @@
+.page {
+  display: grid;
+  gap: 20px;
+}
+
+/* ---------- Controls ---------- */
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 12px;
+  align-items: end;
+}
+
+/* ---------- Results ---------- */
+
+.count {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 56px 64px minmax(120px, 1fr) minmax(140px, 1fr) 90px 80px;
+  gap: 16px;
+  align-items: center;
+  padding: 8px 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.list > li + li {
+  border-top: 1px solid var(--border);
+}
+
+a.row:hover {
+  background: var(--surface-hover);
+}
+
+a.row:hover .name {
+  color: var(--accent);
+}
+
+a.row:focus-visible {
+  outline-offset: -2px;
+}
+
+.headRow {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.sprite {
+  width: 56px;
+  height: 56px;
+  image-rendering: pixelated;
+}
+
+.number {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.name {
+  font-weight: 600;
+}
+
+.types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.mobileLabel {
+  display: none;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 640px) {
+  .controls {
+    grid-template-columns: 1fr auto;
+  }
+
+  .controls > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .headRow {
+    display: none;
+  }
+
+  .row {
+    grid-template-columns: 56px 1fr auto;
+    grid-template-areas:
+      'sprite name number'
+      'sprite types types'
+      'sprite exp height';
+    gap: 4px 12px;
+    padding: 12px 16px;
+  }
+
+  .list > li:nth-child(2) {
+    border-top: 0;
+  }
+
+  .sprite { grid-area: sprite; }
+  .name { grid-area: name; }
+  .number { grid-area: number; text-align: right; }
+  .types { grid-area: types; }
+  .exp { grid-area: exp; text-align: left; }
+  .height { grid-area: height; }
+
+  .exp,
+  .height {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .mobileLabel {
+    display: inline;
+  }
+}
+
+/* Very narrow phones: give the sort dropdown the full width so labels aren't cut off */
+@media (max-width: 420px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+}

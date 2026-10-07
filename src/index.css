@@ -1,0 +1,78 @@
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #fff1f1;
+  --text: #1c1f2a;
+  --text-muted: #5b6275;
+  --border: #e3e5ec;
+  --accent: #cc0000; /* Pokedex red, AA contrast with white text */
+  --accent-dark: #a30000;
+  --accent-contrast: #ffffff;
+  --focus: #2a75bb; /* Pokemon logo blue */
+  --shadow: 0 1px 2px rgba(20, 24, 40, 0.06), 0 4px 12px rgba(20, 24, 40, 0.06);
+  --radius: 6px; /* cards, panels */
+  --radius-sm: 4px; /* buttons */
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, 'SF Mono', Consolas, monospace;
+
+  color-scheme: light;
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Pokemon type colors, shared by badges, filter chips and cards via data-type="..." */
+[data-type] { --type-color: #8a8f9c; --type-text: #fff; }
+[data-type='normal'] { --type-color: #9fa19f; --type-text: #1c1f2a; }
+[data-type='fire'] { --type-color: #e62829; }
+[data-type='water'] { --type-color: #2980ef; }
+[data-type='grass'] { --type-color: #3fa129; }
+[data-type='electric'] { --type-color: #d6a800; --type-text: #1c1f2a; }
+[data-type='ice'] { --type-color: #2fb5d6; --type-text: #1c1f2a; }
+[data-type='fighting'] { --type-color: #ff8000; --type-text: #1c1f2a; }
+[data-type='poison'] { --type-color: #9141cb; }
+[data-type='ground'] { --type-color: #915121; }
+[data-type='flying'] { --type-color: #6f95c9; }
+[data-type='psychic'] { --type-color: #ef4179; }
+[data-type='bug'] { --type-color: #91a119; }
+[data-type='rock'] { --type-color: #afa981; --type-text: #1c1f2a; }
+[data-type='ghost'] { --type-color: #704170; }
+[data-type='dragon'] { --type-color: #5060e1; }
+[data-type='steel'] { --type-color: #60a1b8; }
+[data-type='fairy'] { --type-color: #ef70ef; --type-text: #1c1f2a; }
+[data-type='dark'] { --type-color: #624d4e; }
